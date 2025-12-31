@@ -1,9 +1,9 @@
-import { ValueObject } from "Domain/models/shared/ValueObject";
+import { ValueObject } from 'Domain/models/shared/ValueObject';
 
 type QuantityAvailableValue = number;
 export class QuantityAvailable extends ValueObject<
   QuantityAvailableValue,
-  "QuantityAvailable"
+  'QuantityAvailable'
 > {
   static readonly MAX: number = 1000000;
   static readonly MIN: number = 0;

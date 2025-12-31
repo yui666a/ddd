@@ -1,11 +1,11 @@
-import { ValueObject } from "Domain/models/shared/ValueObject";
+import { ValueObject } from 'Domain/models/shared/ValueObject';
 
 interface PriceValue {
   amount: number;
-  currency: "JPY"; // USD などの通貨を追加する場合はここに追加します
+  currency: 'JPY'; // USD などの通貨を追加する場合はここに追加します
 }
 
-export class Price extends ValueObject<PriceValue, "Price"> {
+export class Price extends ValueObject<PriceValue, 'Price'> {
   static readonly MAX = 1000000;
   static readonly MIN = 1;
 
@@ -14,8 +14,8 @@ export class Price extends ValueObject<PriceValue, "Price"> {
   }
 
   protected validate(value: PriceValue): void {
-    if (value.currency !== "JPY") {
-      throw new Error("現在は日本円のみを扱います。");
+    if (value.currency !== 'JPY') {
+      throw new Error('現在は日本円のみを扱います。');
     }
 
     if (value.amount < Price.MIN || value.amount > Price.MAX) {
@@ -25,11 +25,11 @@ export class Price extends ValueObject<PriceValue, "Price"> {
     }
   }
 
-  get amount(): PriceValue["amount"] {
+  get amount(): PriceValue['amount'] {
     return this.value.amount;
   }
 
-  get currency(): PriceValue["currency"] {
+  get currency(): PriceValue['currency'] {
     return this.value.currency;
   }
 }

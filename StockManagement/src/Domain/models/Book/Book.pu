@@ -5,7 +5,7 @@
 !include ./Price/Price.pu
 
 class "Book(書籍)" as Book << (R,red) RootEntity >> {
-    BookId: BookId
+    BookId: BookId 
     Title: タイトル
     Price: 価格
 }

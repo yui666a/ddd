@@ -1,13 +1,12 @@
-import { ValueObject } from "Domain/models/shared/ValueObject";
-import { nanoid } from "nanoid";
+import { ValueObject } from 'Domain/models/shared/ValueObject';
+import { nanoid } from 'nanoid';
 
 type StockIdValue = string;
-export class StockId extends ValueObject<StockIdValue, "StockId"> {
+export class StockId extends ValueObject<StockIdValue, 'StockId'> {
   static readonly MAX_LENGTH = 100;
   static readonly MIN_LENGTH = 1;
 
   constructor(value: StockIdValue = nanoid()) {
-    // デフォルトではnanoidを利用しID生成
     super(value);
   }
 
